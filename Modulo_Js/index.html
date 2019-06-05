@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function soma(callback) {
+            let resultado = 5 + 5;
+
+            callback();
+        }
+
+        function imprimiresultado (resultado) {
+            console.log("Fiz a conta!");
+        }
+
+        soma(imprimiresultado);
+
+        //Exemplo ForEach
+        let alunos = ["ana", "john", "vini", "felipe", "thom"];
+        alunos.forEach(function(valor, indice){
+            console.log(`${indice} - ${valor}`);
+        });
+
+        //exemplo map
+        let idade = [30, 35, 40, 50, 30];
+
+        let maisJovem = idade.map(function(valor){
+            return valor /2;
+        });
+
+        let maisVelhos = idade.filter(function(valor){
+            return valor > 40;
+        });
+
+        let idadeTotal = idade.reduce(function(total, valor){
+            return total + valor;
+        });
+
+        //Exemplo de Objeto  -> nosso objeto é pessoa e abaixo dele temos os métodos.
+        let pessoa = {
+            'nome': 'hendy',
+            'idade': 23,
+            'profissão': 'dev',
+            'habilidades': ['html', 'css', 'php'],
+            'programar': function (){
+                console.log("programando...")
+            },
+            'altura': 1.75
+        };
+
+        console.log(pessoa.profissão);
+        console.log(pessoa['nome']); //outra maneira de se fazer oque foi feito na linha acima desta.
+
+        console.log(pessoa['habilidades'][0]); //pegar posição do array habilidade
+
+        pessoa.pais = ['Nayane', 'Hebert'];
+
+        pessoa.programar(); //executa o método
+
+        pessoa['programar']();//executar método
+
+    </script>
+
+</body>
+</html>
